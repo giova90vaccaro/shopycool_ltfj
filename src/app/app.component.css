@@ -1,0 +1,116 @@
+@media screen and (min-width: 751px){
+  mat-card{
+    width: 60vw;
+    float: left;
+    align-items: center;
+    height: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+  #piedipagina {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+ }
+ mat-form-field {
+  color: white;
+ }
+  mat-card-title{
+    margin-top: 2vh;
+  }
+  .example-full-width {
+    width: 100%;
+  }
+  mat-card-content{
+    width: 100vw;
+    margin-top: 2vh;
+
+  }
+  .formline{
+    width: 99%;
+  }
+    .interline{
+    width: 49%;
+    float: left;
+    margin-right: 1%;
+    
+   }
+   .interlineDue{
+    width: 39%;
+    float: left;
+    margin-right: 1%;
+   }
+
+   .interPhone{
+    width: 35%;
+    float: left;
+    margin-right: 1%;
+   }
+
+    mat-card-content{
+    width: 40vw;
+  }
+
+  .pubb{
+    width: 19vw;
+    float:left;
+    height: 100%;
+  }
+  .phonePre{
+
+    width: 14%;float: left;
+  }
+  img{
+    width: 40vw;
+    margin-left: 30vw;
+    margin-right: 30vw;
+  }
+
+}
+@media screen and (max-width: 751px){
+  img{
+    width: 100%;
+  }
+  mat-card{
+    width: 100vw;
+
+    align-items: center;
+  }
+  .example-full-width {
+    width: 100%;
+  }
+    mat-card-content{
+    width: 90vw;
+    margin-top: 2vh;
+  }
+    .interline{
+    width: 100%;
+  }
+
+  .interPhone{
+    width: 80%;
+    float: right;
+  }
+    mat-card-title{
+    margin-top: 2vh;
+
+  }
+  .phonePre{
+    width: 18%;
+    float: left;
+  }
+  .pubb{
+    width: 100%;
+    float:left;
+    height: 1%;
+  }
+
+  .finRedirect{
+    font-size: small;
+  }
+
+}
