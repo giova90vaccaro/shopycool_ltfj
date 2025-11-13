@@ -1,5 +1,4 @@
     <mat-card style="justify-content: center;" style="background-color: white; width: 100%;">
-      <mat-card-title>Registrazione</mat-card-title>
       <mat-card-content style="width: 99%; margin-left: 0.5%;">
           <form class="formline">
             <mat-form-field class="example-full-width" appearance="outline">
@@ -19,38 +18,7 @@
               </mat-error>
             </mat-form-field>
           </form>
-          <form class="interline">
-            <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>Sesso</mat-label>
-              <mat-select [formControl]="sesso" (change)="onChangeEvent($event)">
-                <mat-option value="donna">Donna</mat-option>
-                <mat-option value="uomo">Uomo</mat-option>
-                <mat-option value="altro">Altro</mat-option>
-              </mat-select>
-              <mat-error *ngIf="nascita.hasError('required')">
-                Sesso è un campo <strong>Obbligatoria</strong>
-              </mat-error>
-            </mat-form-field>
-          </form>
-          <form class="interline">
-            <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>Data di Nascita</mat-label>
-              <input type="date" matInput placeholder=""  [formControl]= "nascita">
-              <mat-error *ngIf="nascita.hasError('required')">
-                Data di Nascita è un campo <strong>Obbligatoria</strong>
-              </mat-error>
-            </mat-form-field>
-          </form>
-          <form class="interline">
-            <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>Indirizzo</mat-label>
-              <input matInput placeholder="Via...Civico" [formControl]="indirizzo" (change)="onChangeEvent($event)" [value]="indirizzo.value">
-              <mat-error *ngIf="indirizzo.hasError('required')">
-                Indirizzo è <strong>Obbligatoria</strong>
-              </mat-error>
-            </mat-form-field>
-          </form>
-             <form class="interline">
+             <form class="formline">
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Città</mat-label>
               <input matInput placeholder="" [formControl] = "citta" [matAutocomplete]="auto" (change)="onChangeEvent($event)" [value]="citta.value" >
@@ -64,21 +32,7 @@
               </mat-error>
             </mat-form-field>
           </form>
-          <form class="interline">
-            <mat-form-field class="example-full-width" (change)="onChangeEvent($event)" appearance="outline">
-              <mat-label>Provincia</mat-label>
-              <input matInput placeholder=""  [formControl]="ins_comune" #provincia>
-            </mat-form-field>
-          </form>
-          <form class="interline">
-            <mat-form-field class="example-full-width" (change)="onChangeEvent($event)" appearance="outline">
-              <mat-label>CAP</mat-label>
-              <input matInput placeholder="" #cap>
-            </mat-form-field>
-          </form>
-
-
-          <form class="interline">
+          <form class="formline">
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Email</mat-label>
               <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. nome@example.com" (change)="onChangeEvent($event)">
@@ -90,18 +44,7 @@
               </mat-error>
             </mat-form-field>
           </form>
-
-          <form style="width: 4vw;float: left;">
-            <mat-form-field class="example-full-width" appearance="outline">
-          <mat-select placeholder="+39" [formControl]="prefisso"  #prefisco>
-            <mat-option value="+39">+39</mat-option>
-            <mat-option value="+41">+41</mat-option>
-            <mat-option value="+33">+33</mat-option>
-            <mat-option value="+33">+49</mat-option>
-            <mat-option value="+43">+43</mat-option>
-          </mat-select>
-            </mat-form-field></form>
-          <form class="interlineDue">
+          <form class="formline">
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Telefono</mat-label>
 
@@ -111,7 +54,7 @@
               </mat-error>
             </mat-form-field>
           </form>
-        <button style="width: 99%; margin-top: 2vh;" [disabled]="!(nome.value!='' && cognome.value!='' && !(emailFormControl.hasError('email') && !emailFormControl.hasError('required')) &&indirizzo.value!='' && citta.value!='' && nascita.value!='' )" (click)="SaveDate()" mat-raised-button color="primary">Invia Dati</button>
+        <button style="width: 99%; margin-top: 2vh;" [disabled]="!(nome.value!='' && cognome.value!='' && !(emailFormControl.hasError('email') && !emailFormControl.hasError('required'))  && !(!telefono.hasError('required')) && citta.value!='' )" (click)="SaveDate()" mat-raised-button color="primary">Invia Dati</button>
       </mat-card-content>
     
     </mat-card>
