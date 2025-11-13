@@ -80,6 +80,7 @@ export class AppComponent {
   stateForm: any;
   id!:any
   prefisso: FormControl<string | null>;
+  sand: any;
   //nome.value, cognome.value,emailFormControl.value, indirizzo.value, citta.value, nascita.value
   constructor(private api:HttpClient, private call:HttpClient, private route: ActivatedRoute){
     this.body = this.setUsers('dario@cvggold.com', '1CvgGold');
@@ -136,6 +137,34 @@ export class AppComponent {
           privacy : this.checked
         }
         console.log(newUser)
+
+    const body = JSON.stringify(newUser);
+
+         this.sand.post("https://newdatasystem.myftp.biz/loyalty/addUserBetaSand.php", body).subscribe()
+ /*
+      data=>{
+       
+        this. responce= data
+        this.show = false
+        this.error = false
+        this.msg = true;
+        this.dialogRef = this.responce.status
+        if(this.responce.status>200){
+          this.messaggioStato = "Errore interno <br> Controllare i Dati Inseriti. "+this.responce.errors[0].error_description
+        }else{
+          this.apiint.post("https://cvggold-dash.ns0.it/External/BackEndControll/splio/user/loyalties.php", body).subscribe(
+            data=>{
+              console.log(data)
+            }
+          )
+          this.messaggioStato = "Registraizone avvenuta Con successo"
+        }
+      },
+      error=>{
+       // window.location.reload();
+       this.show = false
+       this.error = true
+      }*/
 
 
     }
