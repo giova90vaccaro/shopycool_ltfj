@@ -30,8 +30,6 @@ export interface cliente{
   Indirizzo:String
   Comune:String
   mail:String
-  mark:boolean
-  privacy:boolean
 }
 
 @Component({
@@ -79,7 +77,6 @@ export class AppComponent {
 
   stateForm: any;
   id!:any
-  prefisso: FormControl<string | null>;
   //nome.value, cognome.value,emailFormControl.value, indirizzo.value, citta.value, nascita.value
   constructor(private api:HttpClient, private call:HttpClient, private route: ActivatedRoute, private sand:HttpClient){
     this.body = this.setUsers('dario@cvggold.com', '1CvgGold');
@@ -100,14 +97,9 @@ export class AppComponent {
     this.ins_comune = new FormControl('', [Validators.required])
     this.cognome = new FormControl('', [Validators.required])
     this.coideTessera = new FormControl('', [Validators.required])
-    this.indirizzo = new FormControl('', [Validators.required])
-    this.prefisso = new FormControl('', [Validators.required])
     this.citta = new FormControl('', [Validators.required])
     this.Tessera = new FormControl('', [Validators.required])
-    this.nascita = new FormControl('', [Validators.required])
-    this.cap = new FormControl('', [Validators.required])
     this.telefono = new FormControl('', [Validators.required])
-    this.sesso = new FormControl('', [Validators.required])
     this.changeCount=0;
   }
 
@@ -122,18 +114,16 @@ export class AppComponent {
 
     }
     SaveDate(){
-        var getvalue = "?a="+this.nome.value+"&t="+this.telefono.value+"&b="+this.cognome.value+"&c="+this.sesso.value+"&d="+this.nascita.value+"&e="+this.indirizzo.value+"&f="+this.citta.value+"&g="+this.emailFormControl.value+"&h="+this.ins_comune.value+"&m="+this.checkedmarketing+"&p="+this.checked+"&i="+this.capValue.nativeElement.value
+        //var getvalue = "?a="+this.nome.value+"&t="+this.telefono.value+"&b="+this.cognome.value+"&c=8&d=a&e="+this.indirizzo.value+"&f="+this.citta.value+"&g="+this.emailFormControl.value+"&h="+this.ins_comune.value+"&m="+this.checkedmarketing+"&p="+this.checked+"&i="+this.capValue.nativeElement.value
 
-        console.log(getvalue)
+        //console.log(getvalue)
 
         let newUser : cliente={
-          nome: this.nome.value+"::"+this.cognome.value+"::"+this.sesso.value,
-          DataNascita: this.nascita.value+"::"+this.coideTessera.value,
-          Indirizzo: this.indirizzo.value+"::"+this.capValue.nativeElement.value,
-          Comune: this.ins_comune.value+"::"+this.citta.value,
-          mail: this.emailFormControl.value+"::"+this.prefisso.value+this.telefono.value,
-          mark: this.checkedmarketing,
-          privacy : this.checked
+          nome: this.nome.value+"::"+this.cognome.value+"::c",
+          DataNascita: "12::"+this.coideTessera.value,
+          Indirizzo: "a::b",
+          Comune: "as::"+this.citta.value,
+          mail: this.emailFormControl.value+"::"+this.telefono.value,
         }
         console.log(newUser)
 
