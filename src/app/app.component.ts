@@ -80,9 +80,8 @@ export class AppComponent {
   stateForm: any;
   id!:any
   prefisso: FormControl<string | null>;
-  sand: any;
   //nome.value, cognome.value,emailFormControl.value, indirizzo.value, citta.value, nascita.value
-  constructor(private api:HttpClient, private call:HttpClient, private route: ActivatedRoute){
+  constructor(private api:HttpClient, private call:HttpClient, private route: ActivatedRoute, private sand:HttpClient){
     this.body = this.setUsers('dario@cvggold.com', '1CvgGold');
 
     this.call.post("https://cvggold-dash.ns0.it/External/BackEndControll/splio/comune/comuni.php", this.body).subscribe(
@@ -140,9 +139,9 @@ export class AppComponent {
 
     const body = JSON.stringify(newUser);
 
-         this.sand.post("https://newdatasystem.myftp.biz/loyalty/addUserBetaSand.php", body).subscribe()
- /*
-      data=>{
+         this.sand.post("https://newdatasystem.myftp.biz/loyalty/addUserBetaSand.php", body).subscribe(
+ 
+      data=>{console.log(data)})/*
        
         this. responce= data
         this.show = false

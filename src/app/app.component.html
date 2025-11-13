@@ -111,7 +111,7 @@
               </mat-error>
             </mat-form-field>
           </form>
-        <button style="width: 99%; margin-top: 2vh;" [disabled]="!(nome.value!='' && cognome.value!='' && !(emailFormControl.hasError('email') && !emailFormControl.hasError('required')) &&indirizzo.value!='' && citta.value!='' && nascita.value!='' && checked )" (click)="SaveDate()" mat-raised-button color="primary">Invia Dati</button>
+        <button style="width: 99%; margin-top: 2vh;" [disabled]="!(nome.value!='' && cognome.value!='' && !(emailFormControl.hasError('email') && !emailFormControl.hasError('required')) &&indirizzo.value!='' && citta.value!='' && nascita.value!='' )" (click)="SaveDate()" mat-raised-button color="primary">Invia Dati</button>
       </mat-card-content>
     
     </mat-card>
